@@ -27,6 +27,7 @@ class DialogFlowService:
         self.calendar_service = Credentials.getByServiceAccount()
         self.dialogflow_service = discovery.build('dialogflow', 'v2',
                                            credentials=self.calendar_service)
+
     @staticmethod
     def gen_random_id():
         session_id = str(binascii.b2a_hex(os.urandom(10)))

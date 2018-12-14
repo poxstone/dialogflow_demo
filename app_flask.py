@@ -1,7 +1,7 @@
 import config
 
 from flask import Flask, request
-from main import calendar_webhook
+from main import service_webhook
 
 app = Flask(__name__)
 
@@ -15,8 +15,8 @@ def root():
 
 
 @app.route("/service_webhook", methods=['GET', 'POST'])
-def get_confirm():
-    return calendar_webhook(request)
+def get_webhook():
+    return service_webhook(request)
 
 
 # For local run
